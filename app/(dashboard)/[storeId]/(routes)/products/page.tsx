@@ -9,7 +9,7 @@ const ProductsPage = async ({
 }: {
   params: {
     storeId: string;
-  }
+  } & Promise<any>;
 }) => {
   const products = await prismadb.product.findMany({
     where: {

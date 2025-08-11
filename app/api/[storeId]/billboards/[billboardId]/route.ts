@@ -4,7 +4,7 @@ import prismadb from '@/lib/prismadb';
 
 export async function GET (
   req: Request,
-  { params }: { params: { billboardId: string } }
+  { params }: { params: { billboardId: string } & Promise<any> }
 ) {
   try {
     if (!params.billboardId) {
@@ -27,7 +27,7 @@ export async function GET (
 
 export async function PATCH (
   req: Request,
-  { params }: { params: { storeId: string, billboardId: string } }
+  { params }: { params: { storeId: string, billboardId: string } & Promise<any> }
 ) {
   try {
     const { userId } = await auth();
@@ -82,7 +82,7 @@ export async function PATCH (
 
 export async function DELETE (
   req: Request,
-  { params }: { params: { storeId: string, billboardId: string } }
+  { params }: { params: { storeId: string, billboardId: string } & Promise<any> }
 ) {
   try {
     const { userId } = await auth();;

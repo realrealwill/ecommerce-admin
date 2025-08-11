@@ -8,7 +8,7 @@ const SizesPage = async ({
 }: {
   params: {
     storeId: string;
-  }
+  } & Promise<any>;
 }) => {
   const sizes = await prismadb.size.findMany({
     where: {

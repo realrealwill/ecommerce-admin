@@ -12,7 +12,7 @@ import { getGraphRevenue } from "@/actions/get-graph-revenue";
 interface DashboardPageProps {
   params: {
     storeId: string;
-  };
+  } & Promise<any>;
 }
 
 const DashboardPage: React.FC<DashboardPageProps> = async ({
