@@ -13,7 +13,6 @@ import {toast} from "react-hot-toast";
 import axios from "axios";
 import {useParams, useRouter} from "next/navigation";
 import {AlertModal} from "@/components/modals/alert-modal";
-import {useOrigin} from "@/hooks/use-origin";
 import {Product, Image, Category, Color, Size} from "@prisma/client";
 import ImageUpload from "@/components/ui/image-upload";
 import { Select, SelectTrigger, SelectValue, SelectItem, SelectContent } from "@/components/ui/select";
@@ -49,7 +48,6 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 }) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
